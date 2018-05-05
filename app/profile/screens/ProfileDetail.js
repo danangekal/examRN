@@ -36,22 +36,18 @@ export default class NotificationDetail extends Component {
                             <Text style={styles.text3}>{profile.education}</Text>
                             <Text style={styles.text3}>{profile.location}</Text>
                             <View>
-                                <Left>
-                                    <Button light>
-                                        <Text>Message</Text>
-                                    </Button>
-                                </Left>
-                                <Right>
-                                    <Button info>
-                                        <Text>Connect</Text>
-                                    </Button>
-                                </Right>
+                                <Button light style={styles.buttonMsg}>
+                                    <Text>Message</Text>
+                                </Button>
+                                <Button info style={styles.buttonCnt}>
+                                    <Text>Connect</Text>
+                                </Button>
                             </View>
                             <Text style={styles.text3}>{profile.summary}</Text>
                         </Body>
                     </Card>
                     <Card style={styles.card}>
-                        <Text>Highligts</Text>
+                        <Text style={styles.text3}>Highligts</Text>
                         <List>
                             {profile.highlights_id.map((highlight)=> (
                                 <ListItem
@@ -78,7 +74,8 @@ const styles = StyleSheet.create({
         paddingTop: 10
     },
     card: {
-        margin: 10
+        margin: 10,
+        height: 300,
     },
     buttonHeaderRight: {
         marginTop: 5,
@@ -92,6 +89,12 @@ const styles = StyleSheet.create({
         color: '#000000',
         fontSize: 18
     },
+    buttonMsg: {
+        marginLeft: 30
+    },
+    buttonCnt: {
+        marginRight: 30
+    },
     imageContent: {
         resizeMode: 'cover',
         height: 200,
@@ -103,18 +106,21 @@ const styles = StyleSheet.create({
         color: '#000000',
         fontSize: 24,
         fontWeight: 'bold',
+        textAlign: 'justify',
         justifyContent: 'center'
     },
     text2: {
         color: '#333333',
         fontSize: 18,
         fontWeight: 'bold',
+        textAlign: 'justify',
         justifyContent: 'center'
     },
     text3: {
         color: '#666666',
         fontSize: 14,
         fontWeight: 'bold',
+        textAlign: 'justify',
         justifyContent: 'center'
     }
 
